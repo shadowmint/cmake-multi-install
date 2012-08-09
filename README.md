@@ -1,12 +1,10 @@
 Example cmake multipackage
 --
 
-Try:
-
-  mkdir build
-  cd build
-  cmake ..
-  cpack -G DEB
+mkdir build
+cd build
+cmake ..
+cpack -G DEB
 
 Notes
 --
