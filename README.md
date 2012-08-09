@@ -4,11 +4,7 @@ Example cmake multipackage
 mkdir build;
 cd build;
 cmake ..;
-cpack -G DEB
+make;
+make deb
 
-Notes
---
-
-You can only set a single set of debian package properties
-per cpack invokation. You'll notice the description from
-demo1 and demo2 are not propogated to their packages.
+Package configuration is in the 'packages' subdirectory.
