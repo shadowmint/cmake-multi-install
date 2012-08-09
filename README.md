@@ -1,9 +1,9 @@
 Example cmake multipackage
 --
 
-mkdir build
-cd build
-cmake ..
+mkdir build;
+cd build;
+cmake ..;
 cpack -G DEB
 
 Notes
