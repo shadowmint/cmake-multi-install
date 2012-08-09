@@ -1,16 +1,10 @@
 project(CPACK_DEMO2)
 cmake_minimum_required(VERSION 2.8)
 
-file(GLOB_RECURSE FILES "${CMAKE_CURRENT_SOURCE_DIR}/src/*")
+file(GLOB_RECURSE SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/*)
+add_library(demo2 SHARED ${SOURCES})
 
-install(FILES ${FILES} DESTINATION "tmp/" COMPONENT DEMO2) 
+get_property(TARGET_LIBS TARGET demo2 PROPERTY LOCATION)
+file(GLOB_RECURSE TARGET_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.h)
 
-set(CPACK_PACKAGE_NAME "Demo2")
-set(CPACK_PACKAGE_CONTACT "linderd@staff.iinet.net.au")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Demo package 2")
-
-# TODO: Set package base
-#       Set architecture
-#       Set depends
-
-include(CPack)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/manifest.txt.in ${CMAKE_CURRENT_BINARY_DIR}/manifest.txt)

@@ -1,0 +1,14 @@
+project(PACKAGE-DEMO1)
+cmake_minimum_required(VERSION 2.8)
+
+set(INSTALL_HEADERS "@TARGET_HEADERS@")
+set(INSTALL_LIBS "@TARGET_LIBS@")
+
+install(FILES ${INSTALL_HEADERS} DESTINATION "/tmp/inc")
+install(FILES ${INSTALL_LIBS} DESTINATION "/tmp/lib")
+
+set(CPACK_PACKAGE_NAME "Demo1")
+set(CPACK_PACKAGE_CONTACT "linderd@staff.iinet.net.au")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Demo package 1")
+
+include(CPack)
