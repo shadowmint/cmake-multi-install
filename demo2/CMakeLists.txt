@@ -7,7 +7,7 @@ install(FILES ${FILES} DESTINATION "tmp/" COMPONENT DEMO2)
 
 set(CPACK_PACKAGE_NAME "Demo2")
 set(CPACK_PACKAGE_CONTACT "linderd@staff.iinet.net.au")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Demo package")
+set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "Demo package 2")
 
 # TODO: Set package base
 #       Set architecture
