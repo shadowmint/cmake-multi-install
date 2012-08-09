@@ -10,7 +10,6 @@ target_link_libraries(demo demo1 demo2)
 # Package 1: 
 set(BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR}/packages/demo1)
 include(${PROJECT_BINARY_DIR}/demo1/manifest.txt)
-set(TARGETS ${DEMO1_FILES})
 configure_file(packages/package-demo1.txt ${BUILD_DIR}/CMakeLists.txt @ONLY)
 add_custom_target(package-demo1 COMMAND ${CMAKE_COMMAND} . 
                                 COMMAND ${CMAKE_CPACK_COMMAND} -G DEB
@@ -20,7 +19,6 @@ add_custom_target(package-demo1 COMMAND ${CMAKE_COMMAND} .
 # Package 2: 
 set(BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR}/packages/demo2)
 include(${PROJECT_BINARY_DIR}/demo2/manifest.txt)
-set(TARGETS ${DEMO2_FILES})
 configure_file(packages/package-demo2.txt ${BUILD_DIR}/CMakeLists.txt @ONLY)
 add_custom_target(package-demo2 COMMAND ${CMAKE_COMMAND} . 
                                 COMMAND ${CMAKE_CPACK_COMMAND} -G DEB
